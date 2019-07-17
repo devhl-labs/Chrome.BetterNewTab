@@ -1,0 +1,153 @@
+body{
+	/*text-align: center;*/
+	font-family: 'Segoe UI', Tahoma, sans-serif;
+	margin: 0;
+	display:none;
+	background-color:#E0DADF;
+}
+table{
+	margin: 0 auto;
+}
+
+
+/* ''''''''''''''''''''''  Start header '''''''''''''''''''''''''''' */
+.header{
+	height:20%;
+	width: 100%;
+}
+.pageSlider{
+	cursor: pointer;
+	height: 100%;
+	width: 200px;
+	float:left;
+	position: relative;
+}
+.pageSlider span{
+	position: absolute;
+	bottom: 20px;
+	width: 100px;
+	text-align: center;
+	/*font-size: 200%;*/
+	font-size: 2.5em;
+	font-family: Georgia;
+	letter-spacing: 0.1em;
+	color: rgb(142,11,0);
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+	padding-left:50px;
+}
+.pageSlider:hover{ 
+	background-color:9C9C9C;
+}
+.sliderContainer{ 
+	width:600px;
+	margin: 0 auto;
+	height: 100%;
+}
+/* '''''''''''''''''''''End Header''''''''''''''''''''''''''''''' */
+
+
+
+/* '''''''''''''''''''''Start Content'''''''''''''''''''''''''''' */
+#content{
+	height: 60%;
+	width: 100%; 
+}
+.spacer{
+	height: 100%;
+	width: 10%;
+	float: left;
+}
+
+.mainContent{
+	height: 100%;
+	width: 80%;
+	float: left;
+	text-align: center;
+}
+
+
+/* '''''''''''''''''''''Start Search Panel''''''''''''''''''''''''''''*/
+.wideButton{
+	width: 100px;
+}
+/* '''''''''''''''''''''End Search Panel''''''''''''''''''''''''''''*/
+
+
+
+/* '''''''''''''''''''''Start Speed Dial''''''''''''''''''''''''''''*/
+.speedDialLink{
+	float:left;
+	margin: 20px;
+	text-align: center;
+	width: 242px;
+	height: 242px;
+}
+.sdname{
+	width: 242px;
+}
+
+.speeddiallink:hover{
+	height:230px;
+}
+
+/* '''''''''''''''''''''End Speed Dial'''''''''''''''''''''''''''' */
+
+
+
+/* '''''''''''''''''''''Start Apps Panel'''''''''''''''''''''''''' */
+#appTable td{
+	height: 100px;
+	width: 175px;
+	text-align: center;
+}
+.appTopBorder{
+	width: 100%;
+	height: 20px;
+}
+
+/* '''''''''''''''''''''End Apps Panel'''''''''''''''''''''''''' */
+
+
+
+
+/* '''''''''''''''''''''End Content'''''''''''''''''''''''''''' */
+
+
+
+
+
+/* '''''''''''''''''''''Start Footer'''''''''''''''''''''''''''' */
+.footer{
+	height: 75px;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background: #FFFFFF;
+}
+#specialLinks{
+	position: absolute;
+	bottom: 25px;
+	left: 10;
+}
+#chromeLinks{
+	/*margin: 0 auto;
+	width: 600px;*/
+	position: absolute;
+	right: 10;
+	bottom: 25px;
+}
+#chromeLinks td{
+	width: 150px;
+	text-align: center;
+}
+/*
+.footerItem{
+	width:200px;
+	margin:  0 0 0 100;
+	text-align: center;
+}*/
+
+/*.footerItem span{
+	text-align: center;
+}*/
+/* '''''''''''''''''''''End Footer'''''''''''''''''''''''''''' */
