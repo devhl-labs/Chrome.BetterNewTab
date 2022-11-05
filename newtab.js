@@ -31,21 +31,20 @@ window.addEventListener("load", function(){
     });
 });
 
-function addSpeedDial(name, link, count) {
+function addSpeedDial(topSiteTitle, topSiteUrl, count) {
     //receives top site data and creates the string to append to the page
     //the image to be used is stored in the alt property
     //it will be changed by another function later
     //PARAMETERS
     //
-    //name		the name of the website ex."Facebook"
-    //link		the url of the website
-    //count	a simple count of 0 through 7
-    //			this is needed for changing the image as mentioned above
-    //RESULT	this function will modify the topSitesTable global variable
-    if (name.length > 30) {
-        name = name.substr(0, 27) + "...";
+    //topSiteTitle      the topSiteTitle of the website ex."Facebook"
+    //topSiteUrl        the url of the website
+    //count             a simple count of 0 through 7
+    //RESULT            this function will modify the topSitesTable global variable
+    if (topSiteTitle.length > 30) {
+        topSiteTitle = topSiteTitle.substr(0, 27) + "...";
     }
-    let domain = (new URL(link));
+    let domain = (new URL(topSiteUrl));
     domain = domain.hostname
         .replace("www.", "")
         .replace(".com", "")
@@ -54,9 +53,9 @@ function addSpeedDial(name, link, count) {
         .replace(".gov", "")
         .replace("org", "");
 
-    var thumbnail = link + "favicon.ico"
+    var thumbnail = topSiteUrl + "favicon.ico"
 
-    topSitesTable += '<td><a href="' + link + '" id="a' + count + '" class="speedDialLink plaintext">';
+    topSitesTable += '<td><a href="' + topSiteUrl + '" id="a' + count + '" class="speedDialLink plaintext">';
     topSitesTable += '<img id="img" src="' + thumbnail + '" alt="Favicon for ' + thumbnail + '" class="speedDialImage"/>';
     topSitesTable += '<div><span>' + domain + '</span></div>'
     topSitesTable += '</a></td>'
