@@ -3,7 +3,7 @@ body{
 	font-family: 'Segoe UI', Tahoma, sans-serif;
 	margin: 0;
 	display:none;
-	background-color:#E0DADF;
+	background-color:#2e2e2e;
 }
 table{
 	margin: 0 auto;
@@ -16,7 +16,8 @@ table{
 	width: 100%;
 }
 .pageSlider{
-	cursor: pointer;
+	/* cursor: pointer; */
+	cursor: default;
 	height: 100%;
 	width: 200px;
 	float:left;
@@ -28,16 +29,17 @@ table{
 	width: 100px;
 	text-align: center;
 	/*font-size: 200%;*/
-	font-size: 2.5em;
+	font-size: 4.5em;
+	display: flex;
 	font-family: Georgia;
 	letter-spacing: 0.1em;
-	color: rgb(142,11,0);
-	text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+	color: rgb(84, 20, 15);
+	text-shadow: 3px 3px 3px rgba(27, 9, 9, 0.6);
 	padding-left:50px;
 }
-.pageSlider:hover{ 
+/* .pageSlider:hover{ 
 	background-color:9C9C9C;
-}
+} */
 .sliderContainer{ 
 	width:600px;
 	margin: 0 auto;
@@ -67,9 +69,9 @@ table{
 
 
 /* '''''''''''''''''''''Start Search Panel''''''''''''''''''''''''''''*/
-.wideButton{
+/* .wideButton{
 	width: 100px;
-}
+} */
 /* '''''''''''''''''''''End Search Panel''''''''''''''''''''''''''''*/
 
 
@@ -79,23 +81,45 @@ table{
 	float:left;
 	margin: 20px;
 	text-align: center;
-	width: 242px;
-	height: 242px;
+	width: 150px;
+	height: 150px;
+	/* display: flex; */
+	/* align-items: center; */
+	/* vertical-align: middle; */
+	display: grid;
+	align-content: center;
+	justify-content: center;
 }
-.sdname{
-	width: 242px;
+.speedDialLink:hover{
+	box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+	cursor: pointer;
+	border-radius:0.8em;
 }
 
-.speeddiallink:hover{
-	height:230px;
+
+.speedDialImage {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50px;
+	height: 50px;
 }
+
+
+/* .sdname{
+	width: 242px;
+} */
+
+/* .speeddiallink:hover{
+	height:230px;
+} */
 
 /* '''''''''''''''''''''End Speed Dial'''''''''''''''''''''''''''' */
 
 
 
 /* '''''''''''''''''''''Start Apps Panel'''''''''''''''''''''''''' */
-#appTable td{
+/* #appTable td{
 	height: 100px;
 	width: 175px;
 	text-align: center;
@@ -103,7 +127,7 @@ table{
 .appTopBorder{
 	width: 100%;
 	height: 20px;
-}
+} */
 
 /* '''''''''''''''''''''End Apps Panel'''''''''''''''''''''''''' */
 
@@ -122,7 +146,7 @@ table{
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
-	background: #FFFFFF;
+	background-color:#2e2e2e;
 }
 #specialLinks{
 	position: absolute;
@@ -150,4 +174,53 @@ table{
 /*.footerItem span{
 	text-align: center;
 }*/
+
+.button{
+	display:inline-block;
+	padding:0.7em 1.7em;
+	margin:0 0.3em 0.3em 0;
+	border-radius:0.2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Roboto',sans-serif;
+	font-weight:400;
+	
+	color:#FFFFFF;
+	background-color:#3369ff;
+	box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+	text-align:center;
+	position:relative;
+	width: 150px;
+}
+.button:hover{
+	box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+	cursor: pointer;
+}
+a.flexbutton {
+	display: flex;
+	align-items: center;
+}
+
+@media all and (max-width:30em){
+	.button {
+		display:block;
+		margin:0.4em auto;
+	}
+}
+
+.button.important{
+	background-color: chocolate;
+	width: 100%;
+}
+
+img.small {
+	width: 25px;
+	margin-right: 8px;
+}
+
+a.plaintext {
+	color: white;
+	text-decoration: none;
+}
+
 /* '''''''''''''''''''''End Footer'''''''''''''''''''''''''''' */
