@@ -22,7 +22,9 @@ window.addEventListener("load", function () {
     chrome.topSites.get(function (topSites) {
         var maxLength = topSites.length > 8 ? 8 : topSites.length;
         for (var i = 0; i < maxLength; i++) {
-            if (i == 4) { topSitesTable += "</tr><tr>"; }
+            if (i == 4) {
+                topSitesTable += "</tr><tr>";
+            }
             addSpeedDial(topSites[i]);
         }
         topSitesTable += "</tr></table>";
