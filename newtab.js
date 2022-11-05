@@ -1,6 +1,6 @@
 var topSitesTable = "<table id=\"topSitesTable\"><tr>";
 
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     this.document.getElementById("history").addEventListener("click", () => {
         chrome.tabs.update({
             url: 'chrome://history/'
