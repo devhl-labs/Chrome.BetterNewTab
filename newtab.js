@@ -1,6 +1,25 @@
 $(window).bind(
     "load", function () {
         renderNew();
+
+        $('#history')
+            .click(function (e) {
+                chrome.tabs.update({
+                    url: 'chrome://history/'
+                });
+            });
+
+        $('#chromeSettings').click(function (e) {
+            chrome.tabs.update({
+                url: 'chrome://settings/'
+            });
+        });
+
+        $('#extensions').click(function (e) {
+            chrome.tabs.update({
+                url: 'chrome://extensions/'
+            });
+        });
     }
 );
 
@@ -18,26 +37,6 @@ function renderNew() {
     });
 
     $(".speedDial").show();
-
-    $('#history')
-        .click(function (e) {
-            chrome.tabs.update({
-                url: 'chrome://history/'
-            });
-        });
-
-    $('#chromeSettings').click(function (e) {
-        chrome.tabs.update({
-            url: 'chrome://settings/'
-        });
-    });
-
-    $('#extensions').click(function (e) {
-        chrome.tabs.update({
-            url: 'chrome://extensions/'
-        });
-    }
-    );
 
     $("body").show();
 }
