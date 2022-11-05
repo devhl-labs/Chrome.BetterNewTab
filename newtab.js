@@ -7,7 +7,7 @@ window.addEventListener("load", function () {
         });
     })
 
-    this.document.getElementById("chromeSettings").addEventListener("click", () => {
+    this.document.getElementById("settings").addEventListener("click", () => {
         chrome.tabs.update({
             url: 'chrome://settings/'
         });
