@@ -32,11 +32,7 @@ window.addEventListener("load", function(){
 });
 
 function addSpeedDial(topSite, count) {
-    if (topSite.title.length > 30) {
-        topSite.title = topSite.title.substr(0, 27) + "...";
-    }
-    let domain = (new URL(topSite.url));
-    domain = domain.hostname
+    let domain = new URL(topSite.url).hostname
         .replace("www.", "")
         .replace(".com", "")
         .replace(".edu", "")
