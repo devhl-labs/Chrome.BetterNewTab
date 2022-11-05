@@ -1,8 +1,8 @@
 {
-	"name": "Better New Tab",
-	"version": "0.4",
+	"name": "Top Sites",
+	"version": "1.0.0",
 	"manifest_version": 2,
-	"description": "A much improved new tab page!",
+	"description": "A new tab that shows your top sites. Inspired by a very old version of Chrome's new tab.",
 	"permissions": ["topSites","management"],
 	"web_accessible_resources": ["newtab.js"],
 	"chrome_url_overrides" : {
