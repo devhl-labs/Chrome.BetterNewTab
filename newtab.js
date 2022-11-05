@@ -43,7 +43,7 @@ function addSpeedDial(topSite) {
     var faviconUrl = topSite.url + "favicon.ico"
 
     topSitesTable += '<td><a href="' + topSite.url + '" class="speedDialLink plaintext">';
-    topSitesTable += '<img src="' + faviconUrl + '" alt="Favicon for ' + faviconUrl + '" class="speedDialImage"/>';
+    topSitesTable += '<img src="' + faviconUrl + '" alt="Favicon for ' + domain + '" class="speedDialImage"/>';
     topSitesTable += '<div><span>' + domain + '</span></div>'
     topSitesTable += '</a></td>'
 }
