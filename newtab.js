@@ -17,7 +17,7 @@ function renderNew() {
         $('#speedDial').append(strTopSites);
     });
 
-    showSpeedDial();
+    $(".speedDial").show();
 
     $('#history')
         .click(function (e) {
@@ -40,15 +40,6 @@ function renderNew() {
     );
 
     $("body").show();
-}
-
-
-function showSpeedDial() {
-    //show the speed dial, hide everything else
-    localStorage["currentScreen"] = "speedDial";
-    $(".search").hide();
-    $(".speedDial").show();
-    $(".apps").hide();
 }
 
 function addSpeedDial(name, link, intCount) {
