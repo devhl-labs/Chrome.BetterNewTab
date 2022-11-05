@@ -23,7 +23,7 @@ function renderNew(){
     });
 
     showSpeedDial();
-    
+
     $('#history')
         .click(function(e) {
             chrome.tabs.update({
