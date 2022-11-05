@@ -23,7 +23,7 @@ window.addEventListener("load", function(){
         var maxLength = topSites.length > 8 ? 8 : topSites.length;
         for (var i = 0; i < maxLength; i++) {
             if (i == 4) { topSitesTable += "</tr><tr>"; }
-            addSpeedDial(topSites[i], i);
+            addSpeedDial(topSites[i]);
         }
         topSitesTable += "</tr></table>";
         var items = document.createRange().createContextualFragment(topSitesTable);
@@ -31,7 +31,7 @@ window.addEventListener("load", function(){
     });
 });
 
-function addSpeedDial(topSite, count) {
+function addSpeedDial(topSite) {
     let domain = new URL(topSite.url).hostname
         .replace("www.", "")
         .replace(".com", "")
@@ -42,8 +42,8 @@ function addSpeedDial(topSite, count) {
 
     var faviconUrl = topSite.url + "favicon.ico"
 
-    topSitesTable += '<td><a href="' + topSite.url + '" id="a' + count + '" class="speedDialLink plaintext">';
-    topSitesTable += '<img id="img" src="' + faviconUrl + '" alt="Favicon for ' + faviconUrl + '" class="speedDialImage"/>';
+    topSitesTable += '<td><a href="' + topSite.url + '" class="speedDialLink plaintext">';
+    topSitesTable += '<img src="' + faviconUrl + '" alt="Favicon for ' + faviconUrl + '" class="speedDialImage"/>';
     topSitesTable += '<div><span>' + domain + '</span></div>'
     topSitesTable += '</a></td>'
 }
