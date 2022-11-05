@@ -14,8 +14,8 @@
         "newtab": "newtab.html"
     },
     "icons": {
-        "16": "images/b16.png",
-        "48": "images/b48.png",
-        "128": "images/b128.png"
+        "16": "images/browser16.png",
+        "32": "images/browser32.png",
+        "128": "images/browser128.png"
     }
 }
