@@ -6,7 +6,7 @@
 	"permissions": ["topSites","management"],
 	"web_accessible_resources": ["newtab.js"],
 	"chrome_url_overrides" : {
-		"newtab": "newtab.htm"
+		"newtab": "newtab.html"
 	},
 	"icons": {
 		"16": "images/b16.png",
