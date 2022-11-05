@@ -18,12 +18,12 @@ window.addEventListener("load", function () {
     })
 
     chrome.topSites.get(function (topSites) {
-        var topSitesTable = "<table id=\"topSitesTable\"><tr>";
-        var maxLength = topSites.length > 8
+        let topSitesTable = "<table id=\"topSitesTable\"><tr>";
+        const maxLength = topSites.length > 8
             ? 8
             : topSites.length;
 
-        for (var i = 0; i < maxLength; i++) {
+        for (let i = 0; i < maxLength; i++) {
             if (i == 4) {
                 topSitesTable += "</tr><tr>";
             }
@@ -31,7 +31,7 @@ window.addEventListener("load", function () {
         }
 
         topSitesTable += "</tr></table/>";
-        var items = document.createRange().createContextualFragment(topSitesTable);
+        const items = document.createRange().createContextualFragment(topSitesTable);
         document.getElementById("speedDial").appendChild(items);
     });
 });
@@ -45,7 +45,7 @@ function getSpeedDial(topSite) {
         .replace(".gov", "")
         .replace("org", "");
 
-    var faviconUrl = topSite.url + "favicon.ico"
+    const faviconUrl = topSite.url + "favicon.ico"
 
     return `
         <td>
