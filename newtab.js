@@ -1,4 +1,4 @@
-var strTopSites = "<table id=\"topSitesTable\"><tr>";
+var topSitesTable = "<table id=\"topSitesTable\"><tr>";
 
 window.addEventListener("load", function(){
     this.document.getElementById("history").addEventListener("click", () => {
@@ -22,16 +22,16 @@ window.addEventListener("load", function(){
     chrome.topSites.get(function (topSites) {
         var maxLength = topSites.length > 8 ? 8 : topSites.length;
         for (var i = 0; i < maxLength; i++) {
-            if (i == 4) { strTopSites += "</tr><tr>"; }
+            if (i == 4) { topSitesTable += "</tr><tr>"; }
             addSpeedDial(topSites[i].title, topSites[i].url, i);
         }
-        strTopSites += "</tr></table>";
-        var items = document.createRange().createContextualFragment(strTopSites);
+        topSitesTable += "</tr></table>";
+        var items = document.createRange().createContextualFragment(topSitesTable);
         document.getElementById("speedDial").appendChild(items);
     });
 });
 
-function addSpeedDial(name, link, intCount) {
+function addSpeedDial(name, link, count) {
     //receives top site data and creates the string to append to the page
     //the image to be used is stored in the alt property
     //it will be changed by another function later
@@ -39,9 +39,9 @@ function addSpeedDial(name, link, intCount) {
     //
     //name		the name of the website ex."Facebook"
     //link		the url of the website
-    //intCount	a simple count of 0 through 7
+    //count	a simple count of 0 through 7
     //			this is needed for changing the image as mentioned above
-    //RESULT	this function will modify the strTopSites global variable
+    //RESULT	this function will modify the topSitesTable global variable
     if (name.length > 30) {
         name = name.substr(0, 27) + "...";
     }
@@ -56,8 +56,8 @@ function addSpeedDial(name, link, intCount) {
 
     var thumbnail = link + "favicon.ico"
 
-    strTopSites += '<td><a href="' + link + '" id="a' + intCount + '" class="speedDialLink plaintext">';
-    strTopSites += '<img id="img" src="' + thumbnail + '" alt="Favicon for ' + thumbnail + '" class="speedDialImage"/>';
-    strTopSites += '<div><span>' + domain + '</span></div>'
-    strTopSites += '</a></td>'
+    topSitesTable += '<td><a href="' + link + '" id="a' + count + '" class="speedDialLink plaintext">';
+    topSitesTable += '<img id="img" src="' + thumbnail + '" alt="Favicon for ' + thumbnail + '" class="speedDialImage"/>';
+    topSitesTable += '<div><span>' + domain + '</span></div>'
+    topSitesTable += '</a></td>'
 }
