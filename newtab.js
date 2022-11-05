@@ -40,10 +40,10 @@ function addSpeedDial(topSite, count) {
         .replace(".gov", "")
         .replace("org", "");
 
-    var thumbnail = topSite.url + "favicon.ico"
+    var faviconUrl = topSite.url + "favicon.ico"
 
     topSitesTable += '<td><a href="' + topSite.url + '" id="a' + count + '" class="speedDialLink plaintext">';
-    topSitesTable += '<img id="img" src="' + thumbnail + '" alt="Favicon for ' + thumbnail + '" class="speedDialImage"/>';
+    topSitesTable += '<img id="img" src="' + faviconUrl + '" alt="Favicon for ' + faviconUrl + '" class="speedDialImage"/>';
     topSitesTable += '<div><span>' + domain + '</span></div>'
     topSitesTable += '</a></td>'
 }
