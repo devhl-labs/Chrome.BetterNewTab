@@ -1,7 +1,5 @@
 $(window).bind(
     "load", function () {
-        renderNew();
-
         $('#history')
             .click(function (e) {
                 chrome.tabs.update({
@@ -20,24 +18,22 @@ $(window).bind(
                 url: 'chrome://extensions/'
             });
         });
+
+        chrome.topSites.get(function (topSites) {
+            var maxLength = topSites.length > 8 ? 8 : topSites.length;
+            for (var i = 0; i < maxLength; i++) {
+                if (i == 4) { strTopSites += "</tr><tr>"; }
+                addSpeedDial(topSites[i].title, topSites[i].url, i);
+            }
+            strTopSites += "</tr></table>";
+            $('#speedDial').append(strTopSites);
+        });
+
+        $("body").show();
     }
 );
 
 var strTopSites = "<table id=\"topSitesTable\"><tr>";
-
-function renderNew() {
-    chrome.topSites.get(function (topSites) {
-        var maxLength = topSites.length > 8 ? 8 : topSites.length;
-        for (var i = 0; i < maxLength; i++) {
-            if (i == 4) { strTopSites += "</tr><tr>"; }
-            addSpeedDial(topSites[i].title, topSites[i].url, i);
-        }
-        strTopSites += "</tr></table>";
-        $('#speedDial').append(strTopSites);
-    });
-
-    $("body").show();
-}
 
 function addSpeedDial(name, link, intCount) {
     //receives top site data and creates the string to append to the page
