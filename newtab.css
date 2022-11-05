@@ -1,37 +1,39 @@
-body{
+body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     margin: 0;
-    display:none;
-    background-color:#2e2e2e;
+    display: none;
+    background-color: #2e2e2e;
 }
-table{
+
+table {
     margin: 0 auto;
 }
 
-.header{
-    height:20%;
+.header {
+    height: 20%;
     width: 100%;
 }
 
-#content{
+#content {
     height: 60%;
-    width: 100%; 
+    width: 100%;
 }
-.spacer{
+
+.spacer {
     height: 100%;
     width: 10%;
     float: left;
 }
 
-.mainContent{
+.mainContent {
     height: 100%;
     width: 80%;
     float: left;
     text-align: center;
 }
 
-.speedDialLink{
-    float:left;
+.speedDialLink {
+    float: left;
     margin: 20px;
     text-align: center;
     width: 150px;
@@ -40,10 +42,11 @@ table{
     align-content: center;
     justify-content: center;
 }
-.speedDialLink:hover{
-    box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+
+.speedDialLink:hover {
+    box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
     cursor: pointer;
-    border-radius:0.8em;
+    border-radius: 0.8em;
 }
 
 .speedDialImage {
@@ -54,62 +57,67 @@ table{
     height: 50px;
 }
 
-.footer{
+.footer {
     height: 75px;
     position: absolute;
     bottom: 0px;
     width: 100%;
-    background-color:#2e2e2e;
+    background-color: #2e2e2e;
 }
-#specialLinks{
+
+#specialLinks {
     position: absolute;
     bottom: 25px;
     left: 10;
 }
-#chromeLinks{
+
+#chromeLinks {
     position: absolute;
     right: 10;
     bottom: 25px;
 }
-#chromeLinks td{
+
+#chromeLinks td {
     width: 150px;
     text-align: center;
 }
 
-.button{
-    display:inline-block;
-    padding:0.7em 1.7em;
-    margin:0 0.3em 0.3em 0;
-    border-radius:0.2em;
+.button {
+    display: inline-block;
+    padding: 0.7em 1.7em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.2em;
     box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Roboto',sans-serif;
-    font-weight:400;
-    
-    color:#FFFFFF;
-    background-color:#3369ff;
-    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
-    text-align:center;
-    position:relative;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+    color: #FFFFFF;
+    background-color: #3369ff;
+    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    text-align: center;
+    position: relative;
     width: 150px;
 }
-.button:hover{
-    box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+
+.button:hover {
+    box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
     cursor: pointer;
 }
+
 a.flexbutton {
     display: flex;
     align-items: center;
 }
 
-@media all and (max-width:30em){
+@media all and (max-width:30em) {
     .button {
-        display:block;
-        margin:0.4em auto;
+        display: block;
+        margin: 0.4em auto;
     }
 }
 
-.button.important{
+.button.important {
     background-color: chocolate;
     width: 100%;
 }

@@ -1,54 +1,54 @@
 $(window).bind(
-    "load", function() {
+    "load", function () {
         renderNew();
     }
 );
 
-var strTopSites="<table id=\"topSitesTable\"><tr>";
+var strTopSites = "<table id=\"topSitesTable\"><tr>";
 
-function renderNew(){
-    $("#topSites").click(function(e){
+function renderNew() {
+    $("#topSites").click(function (e) {
         showSpeedDial();
     });
 
     //this grabs top site info and passes info to addSpeedDial function
-    chrome.topSites.get(function(topSites){
+    chrome.topSites.get(function (topSites) {
         var maxLength = topSites.length > 8 ? 8 : topSites.length;
-        for(var i = 0; i < maxLength; i++){
-            if(i==4){strTopSites+="</tr><tr>";}
-            addSpeedDial(topSites[i].title,topSites[i].url, i);
+        for (var i = 0; i < maxLength; i++) {
+            if (i == 4) { strTopSites += "</tr><tr>"; }
+            addSpeedDial(topSites[i].title, topSites[i].url, i);
         }
-        strTopSites+="</tr></table>";
+        strTopSites += "</tr></table>";
         $('#speedDial').append(strTopSites);
     });
 
     showSpeedDial();
 
     $('#history')
-        .click(function(e) {
+        .click(function (e) {
             chrome.tabs.update({
                 url: 'chrome://history/'
             });
         });
-        
-    $('#chromeSettings').click(function(e) {
+
+    $('#chromeSettings').click(function (e) {
         chrome.tabs.update({
             url: 'chrome://settings/'
         });
     });
-        
-    $('#extensions').click(function(e) {
-            chrome.tabs.update({
-                url: 'chrome://extensions/'
-            });
-        }
+
+    $('#extensions').click(function (e) {
+        chrome.tabs.update({
+            url: 'chrome://extensions/'
+        });
+    }
     );
-        
+
     $("body").show();
 }
 
 
-function showSpeedDial(){
+function showSpeedDial() {
     //show the speed dial, hide everything else
     localStorage["currentScreen"] = "speedDial";
     $(".search").hide();
@@ -56,7 +56,7 @@ function showSpeedDial(){
     $(".apps").hide();
 }
 
-function addSpeedDial(name, link, intCount){
+function addSpeedDial(name, link, intCount) {
     //receives top site data and creates the string to append to the page
     //the image to be used is stored in the alt property
     //it will be changed by another function later
@@ -67,8 +67,8 @@ function addSpeedDial(name, link, intCount){
     //intCount	a simple count of 0 through 7
     //			this is needed for changing the image as mentioned above
     //RESULT	this function will modify the strTopSites global variable
-    if(name.length > 30){
-        name = name.substr(0, 27)+"...";
+    if (name.length > 30) {
+        name = name.substr(0, 27) + "...";
     }
     let domain = (new URL(link));
     domain = domain.hostname
@@ -81,8 +81,8 @@ function addSpeedDial(name, link, intCount){
 
     var thumbnail = link + "favicon.ico"
 
-    strTopSites+='<td><a href="' + link + '" id="a' + intCount + '" class="speedDialLink plaintext">';
-    strTopSites+='<img id="img" src="' + thumbnail + '" alt="Favicon for ' + thumbnail + '" class="speedDialImage"/>';
-    strTopSites+='<div><span>' + domain + '</span></div>'
-    strTopSites+='</a></td>'
+    strTopSites += '<td><a href="' + link + '" id="a' + intCount + '" class="speedDialLink plaintext">';
+    strTopSites += '<img id="img" src="' + thumbnail + '" alt="Favicon for ' + thumbnail + '" class="speedDialImage"/>';
+    strTopSites += '<div><span>' + domain + '</span></div>'
+    strTopSites += '</a></td>'
 }
