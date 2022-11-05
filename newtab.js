@@ -7,11 +7,6 @@ $(window).bind(
 var strTopSites = "<table id=\"topSitesTable\"><tr>";
 
 function renderNew() {
-    $("#topSites").click(function (e) {
-        showSpeedDial();
-    });
-
-    //this grabs top site info and passes info to addSpeedDial function
     chrome.topSites.get(function (topSites) {
         var maxLength = topSites.length > 8 ? 8 : topSites.length;
         for (var i = 0; i < maxLength; i++) {
