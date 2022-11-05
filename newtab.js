@@ -36,8 +36,6 @@ function renderNew() {
         $('#speedDial').append(strTopSites);
     });
 
-    $(".speedDial").show();
-
     $("body").show();
 }
 
