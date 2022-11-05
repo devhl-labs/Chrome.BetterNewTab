@@ -1,5 +1,3 @@
-var topSitesTable = "<table id=\"topSitesTable\"><tr>";
-
 window.addEventListener("load", function () {
     this.document.getElementById("history").addEventListener("click", () => {
         chrome.tabs.update({
@@ -20,20 +18,25 @@ window.addEventListener("load", function () {
     })
 
     chrome.topSites.get(function (topSites) {
-        var maxLength = topSites.length > 8 ? 8 : topSites.length;
+        var topSitesTable = "<table id=\"topSitesTable\"><tr>";
+        var maxLength = topSites.length > 8
+            ? 8
+            : topSites.length;
+
         for (var i = 0; i < maxLength; i++) {
             if (i == 4) {
                 topSitesTable += "</tr><tr>";
             }
-            addSpeedDial(topSites[i]);
+            topSitesTable += getSpeedDial(topSites[i]);
         }
-        topSitesTable += "</tr></table>";
+
+        topSitesTable += "</tr></table/>";
         var items = document.createRange().createContextualFragment(topSitesTable);
         document.getElementById("speedDial").appendChild(items);
     });
 });
 
-function addSpeedDial(topSite) {
+function getSpeedDial(topSite) {
     let domain = new URL(topSite.url).hostname
         .replace("www.", "")
         .replace(".com", "")
@@ -44,7 +47,7 @@ function addSpeedDial(topSite) {
 
     var faviconUrl = topSite.url + "favicon.ico"
 
-    topSitesTable += `
+    return `
         <td>
             <a href="${topSite.url}" class="speedDialLink plaintext">
                 <img src="${faviconUrl}" alt="Favicon for ${domain}" class="speedDialImage"/>
