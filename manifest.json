@@ -1,16 +1,16 @@
 {
-	"name": "Top Sites",
-	"version": "1.0.0",
-	"manifest_version": 2,
-	"description": "A new tab that shows your top sites. Inspired by a very old version of Chrome's new tab.",
-	"permissions": ["topSites","management"],
-	"web_accessible_resources": ["newtab.js"],
-	"chrome_url_overrides" : {
-		"newtab": "newtab.html"
-	},
-	"icons": {
-		"16": "images/b16.png",
-		"48": "images/b48.png",
-		"128": "images/b128.png"
-	}
+    "name": "Top Sites",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "A new tab that shows your top sites. Inspired by a very old version of Chrome's new tab.",
+    "permissions": ["topSites","management"],
+    "web_accessible_resources": ["newtab.js"],
+    "chrome_url_overrides" : {
+        "newtab": "newtab.html"
+    },
+    "icons": {
+        "16": "images/b16.png",
+        "48": "images/b48.png",
+        "128": "images/b128.png"
+    }
 }
