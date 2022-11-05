@@ -43,7 +43,7 @@ function getSpeedDial(topSite) {
         .replace(".edu", "")
         .replace(".co.uk", "")
         .replace(".gov", "")
-        .replace("org", "");
+        .replace(".org", "");
 
     const faviconUrl = topSite.url + "favicon.ico"
 
