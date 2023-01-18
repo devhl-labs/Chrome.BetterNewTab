@@ -1,6 +1,6 @@
 {
     "name": "Top Sites",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "manifest_version": 2,
     "description": "A new tab that shows your top sites. Inspired by a very old version of Chrome's new tab.",
     "permissions": [
@@ -13,8 +13,8 @@
         "newtab": "src/newtab.html"
     },
     "icons": {
-        "16": "docs/icons/browser16.png",
-        "32": "docs/icons/browser32.png",
-        "128": "docs/icons/browser128.png"
+        "16": "src/icons/browser16.png",
+        "32": "src/icons/browser32.png",
+        "128": "src/icons/browser128.png"
     }
 }
