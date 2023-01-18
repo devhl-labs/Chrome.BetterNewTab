@@ -7,14 +7,14 @@
         "topSites"
     ],
     "web_accessible_resources": [
-        "newtab.js"
+        "src/newtab.js"
     ],
     "chrome_url_overrides": {
-        "newtab": "newtab.html"
+        "newtab": "src/newtab.html"
     },
     "icons": {
-        "16": "images/browser16.png",
-        "32": "images/browser32.png",
-        "128": "images/browser128.png"
+        "16": "docs/icons/browser16.png",
+        "32": "docs/icons/browser32.png",
+        "128": "docs/icons/browser128.png"
     }
 }
