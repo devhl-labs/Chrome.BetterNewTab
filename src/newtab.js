@@ -37,7 +37,8 @@ window.addEventListener("load", function () {
 });
 
 function getSpeedDial(topSite) {
-    let domain = new URL(topSite.url).hostname
+    const url = new URL(topSite.url)
+    const domain = url.hostname
         .replace("www.", "")
         .replace(".com", "")
         .replace(".edu", "")
@@ -45,12 +46,10 @@ function getSpeedDial(topSite) {
         .replace(".gov", "")
         .replace(".org", "");
 
-    const faviconUrl = topSite.url + "favicon.ico"
-
     return `
         <td>
             <a href="${topSite.url}" class="speedDialLink plaintext">
-                <img src="${faviconUrl}" alt="Favicon for ${domain}" class="speedDialImage"/>
+                <img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${url.host.replace("www.", "")}&size=64" alt="Favicon for ${domain}" class="speedDialImage"/>
                 <div>
                     <span>${domain}</span>
                 </div>
