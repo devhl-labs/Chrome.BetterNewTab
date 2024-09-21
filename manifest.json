@@ -1,13 +1,21 @@
 {
     "name": "Top Sites",
-    "version": "1.0.2",
-    "manifest_version": 2,
+    "version": "1.0.3",
+    "manifest_version": 3,
     "description": "A new tab that shows your top sites. Inspired by a very old version of Chrome's new tab.",
     "permissions": [
         "topSites"
     ],
     "web_accessible_resources": [
-        "src/newtab.js"
+        {
+            "resources": [
+                "src/newtab.js"
+            ],
+            "matches": [
+                "*://*/*"
+            ]
+        }
+        
     ],
     "chrome_url_overrides": {
         "newtab": "src/newtab.html"
